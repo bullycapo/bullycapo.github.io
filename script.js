@@ -1,20 +1,25 @@
-// Ange startdatum
+// Timer-funktion
 const startDate = new Date('2023-01-01T00:00:00');
 
-// Uppdatera timern varje sekund
 function updateTimer() {
     const now = new Date();
-    const timeElapsed = now - startDate;
+    const elapsed = now - startDate;
 
-    // Omvandla till dagar, timmar, minuter och sekunder
-    const days = Math.floor(timeElapsed / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeElapsed / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((timeElapsed / (1000 * 60)) % 60);
-    const seconds = Math.floor((timeElapsed / 1000) % 60);
+    const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((elapsed / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((elapsed / (1000 * 60)) % 60);
+    const seconds = Math.floor((elapsed / 1000) % 60);
 
-    // Visa tiden på hemsidan
-    document.getElementById('timer').innerText =
+    document.getElementById('timer-display').innerText =
         `${days} dagar, ${hours} timmar, ${minutes} minuter, ${seconds} sekunder`;
 }
 
 setInterval(updateTimer, 1000);
+
+// Kopiera adress
+function copyAddress() {
+    const address = document.getElementById('contract-address').innerText;
+    navigator.clipboard.writeText(address).then(() => {
+        alert('Contract Address kopierad!');
+    });
+}
