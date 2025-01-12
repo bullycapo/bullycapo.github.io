@@ -12,7 +12,7 @@ function updateTimer() {
     const minutes = Math.floor((elapsed / (1000 * 60)) % 60);
     const seconds = Math.floor((elapsed / 1000) % 60);
 
-    // Visa tiden på sidan
+    // Visa endast tiden på sidan
     document.getElementById('timer-display').innerText =
         `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
 }
