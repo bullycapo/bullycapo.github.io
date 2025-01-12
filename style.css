@@ -1,46 +1,38 @@
-/* Bakgrund med grön och röd gradient */
+/* Bakgrund med slumpmässiga gröna och röda sektioner */
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     text-align: center;
     height: 100%;
-    background: linear-gradient(135deg, #00ff00, #ff0000); /* Grön för bullmarket, röd för bear market */
-    background-size: 400% 400%;
-    animation: gradientAnimation 10s ease infinite;
+    background: url('candlestick-pattern.png') no-repeat center center fixed; /* Candlestick background pattern */
+    background-size: cover;
     color: white;
+    position: relative;
 }
 
-/* Bakgrundsgradientanimation */
-@keyframes gradientAnimation {
+/* Animerad bakgrund som skapar en mer oregelbunden effekt med grönt och rött */
+@keyframes dynamicBackground {
     0% {
-        background-position: 0% 50%;
+        background-color: #ff0000;
     }
     50% {
-        background-position: 100% 50%;
+        background-color: #00ff00;
     }
     100% {
-        background-position: 0% 50%;
+        background-color: #ff0000;
     }
+}
+
+/* Bakgrundsjustering för animationen */
+body {
+    animation: dynamicBackground 10s ease-in-out infinite;
 }
 
 /* Header */
 header {
     padding: 20px;
     background: rgba(0, 0, 0, 0.7);
-}
-
-h1, h2, h3 {
-    margin: 0;
-}
-
-/* Main container */
-main {
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    display: inline-block;
-    margin: 20px auto;
 }
 
 /* Coinbilden som snurrar */
@@ -90,7 +82,7 @@ button:hover {
 /* Social media links */
 .social-links img {
     width: 40px;
-    margin: 0 10px;
+    margin: 0 20px; /* Ökat avstånd mellan ikoner */
     transition: transform 0.2s;
 }
 
