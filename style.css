@@ -1,37 +1,14 @@
-/* Dynamisk candlestick bakgrund */
+/* Global styling */
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     text-align: center;
     height: 100%;
-    background: black;
+    background: url('candlestick-pattern.png') no-repeat center center fixed;
+    background-size: cover;
     color: white;
-    overflow: hidden;
     position: relative;
-}
-
-/* Candlestick animation */
-@keyframes candleMove {
-    0% {
-        transform: translateY(0%);
-    }
-    100% {
-        transform: translateY(-100%);
-    }
-}
-
-/* Bakgrund för candlesticks */
-.background::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    background: url('candlestick-pattern.png') repeat-y;
-    opacity: 0.2;
-    animation: candleMove 20s linear infinite;
 }
 
 /* Header */
@@ -40,34 +17,41 @@ header {
     background: rgba(0, 0, 0, 0.7);
 }
 
-/* Coinbilden som snurrar */
+/* Introduction section */
+.introduction {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    text-align: left;
+    line-height: 1.8;
+}
+
+/* CA section and coin image */
+.ca-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+}
+
 .coin-wrapper {
-    display: inline-block;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 .coin-image {
     width: 100px;
     height: 100px;
-    border-radius: 50%; /* Gör bilden rund */
-    animation: spin 4s linear infinite; /* Snurra bilden */
+    border-radius: 50%;
+    animation: spin 4s linear infinite;
 }
 
-/* Snurrande animation */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+.contract-info h3 {
+    margin: 0 0 10px;
 }
 
-/* Copy Address knapp */
 button {
-    display: block;
-    margin: 20px auto 10px;
     padding: 10px 20px;
     background: #ff9900;
     color: black;
@@ -81,32 +65,21 @@ button:hover {
     background: #ff6600;
 }
 
-/* Social media links */
-.social-links {
-    margin-top: 30px;
-    position: fixed;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.social-links img {
-    width: 40px;
-    transition: transform 0.2s;
-}
-
-.social-links img:hover {
-    transform: scale(1.2);
-}
-
 /* Footer */
 footer {
-    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     background: rgba(0, 0, 0, 0.7);
     padding: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .ticker {
@@ -114,8 +87,35 @@ footer {
     font-size: 1.2em;
 }
 
-/* Contract address section */
-.ca-section {
-    margin-top: 20px;
-    text-align: center;
+.social-links {
+    display: flex;
+    align-items: center;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+}
+
+.social-links img {
+    width: 30px;
+    margin-right: 5px;
+    transition: transform 0.2s;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
+}
+
+/* Coin spinning animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
