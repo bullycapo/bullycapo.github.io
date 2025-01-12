@@ -3,10 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Min GitHub Hemsida</title>
+    <title>Min Memecoin</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Välkommen till min hemsida!</h1>
-    <p>Den här sidan är skapad med GitHub Pages.</p>
+    <div class="background">
+        <header>
+            <h1>Välkommen till Min Memecoin!</h1>
+        </header>
+        <main>
+            <div class="introduction">
+                <h2>Gör dig redo för den bästa memecoinen!</h2>
+                <p>Köp och investera i vår fantastiska coin – framtiden är här!</p>
+            </div>
+            <div class="timer">
+                <h3>Hur mycket tid har gått sedan lanseringen?</h3>
+                <div id="timer-display">0 dagar, 0 timmar, 0 minuter, 0 sekunder</div>
+            </div>
+            <div class="ca-section">
+                <h3>Contract Address</h3>
+                <p id="contract-address">0x123456789ABCDEF...</p>
+                <button onclick="copyAddress()">Kopiera Address</button>
+            </div>
+        </main>
+        <footer>
+            <h4>Följ oss</h4>
+            <div class="social-links">
+                <a href="https://twitter.com/dittkonto" target="_blank"><img src="icons/twitter.png" alt="Twitter"></a>
+                <a href="https://discord.gg/dittkonto" target="_blank"><img src="icons/discord.png" alt="Discord"></a>
+                <a href="https://t.me/dittkonto" target="_blank"><img src="icons/telegram.png" alt="Telegram"></a>
+                <!-- Lägg till fler om behövs -->
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
