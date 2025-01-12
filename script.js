@@ -14,7 +14,7 @@ function updateTimer() {
 
     // Visa tiden på sidan
     document.getElementById('timer-display').innerText =
-        `${days} dagar, ${hours} timmar, ${minutes} minuter, ${seconds} sekunder`;
+        `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
 }
 
 // Uppdatera timern varje sekund
@@ -24,6 +24,6 @@ setInterval(updateTimer, 1000);
 function copyAddress() {
     const address = document.getElementById('contract-address').innerText;
     navigator.clipboard.writeText(address).then(() => {
-        alert('Contract Address kopierad!');
+        alert('Contract Address copied!');
     });
 }
