@@ -28,9 +28,9 @@ body, html {
 
 /* Text Sektion */
 .text-section {
-    background: rgba(0, 0, 0, 0.7); /* Halvtransparent svart bakgrund */
+    background: rgba(0, 0, 0, 0.3); /* Halvtransparent svart bakgrund */
     padding: 20px;
-    margin: 30px 10%;
+    margin: 10px 10%;
     border-radius: 10px;
     line-height: 1.8;
     text-align: left;
@@ -42,7 +42,7 @@ body, html {
 footer {
     position: fixed;
     bottom: 0;
-    right: 0;
+    right: -1;
     padding: 20px;
     text-align: right;
 }
