@@ -24,15 +24,15 @@ body, html {
     position: relative;
     z-index: 1;
     padding: 20px;
-    color: white; /* Gör texten vit */
+    color: white;
 }
 
 /* Text Sektion */
 .text-section {
-    background: rgba(0, 0, 0, 0.4); /* Halvtransparent svart bakgrund */
+    background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     margin: 30px auto;
-    width: 60%; /* Justering för att centrerad text */
+    width: 60%;
     border-radius: 10px;
     line-height: 1.8;
     text-align: left;
@@ -44,82 +44,87 @@ footer {
     bottom: 0;
     right: 0;
     padding: 20px;
-    text-align: right;
-    background-color: rgba(0, 50, 0, 0.4); /* Mörkgrön bakgrund */
+    background-color: rgba(0, 50, 0, 0.4);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 20px;
-    width: 100px; /* Bredden på den vertikala layouten */
-    /* Justering av position för layouten från höger */
-    right: 5%; /* Ändra denna för att flytta layouten från höger */
-}
-
-.footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
-}
-
-/* Social Links */
-.social-links img {
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
-    transition: transform 0.2s;
-}
-
-.social-links img:hover {
-    transform: scale(1.2);
+    width: 250px; /* Bredden på layouten */
+    right: 5%; /* Flytta layouten från höger */
 }
 
 /* Coin Image */
-.coin-wrapper {
-    margin-bottom: 10px;
-}
-
 .coin-image {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    animation: spin 4s linear infinite;
-    object-fit: cover; /* Ser till att bilden fyller sin runda form */
+    animation: spin 5s linear infinite;
+    object-fit: cover;
 }
 
-/* Coin Image Animation */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
+/* Responsiva Media Queries */
+
+/* För mindre skärmar (mobiler) */
+@media (max-width: 768px) {
+    .text-section {
+        width: 90%; /* Gör textsektionen bredare för små skärmar */
+        padding: 15px;
+        font-size: 14px;
     }
-    100% {
-        transform: rotate(360deg);
+
+    footer {
+        width: 200px; /* Justera footer-bredd för mobiler */
+        right: 5%; /* Närmare mitten på små skärmar */
+        padding: 15px;
+    }
+
+    .coin-image {
+        width: 60px; /* Gör coin-bilden mindre på mobiler */
+        height: 60px;
+    }
+
+    .social-links img {
+        width: 25px; /* Minska ikoner för sociala medier */
+        height: 25px;
+    }
+
+    button {
+        padding: 8px 15px; /* Mindre knappstorlek */
+        font-size: 12px;
     }
 }
 
-/* Contract Address */
-.contract {
-    text-align: right;
+/* För mellan skärmar (surfplattor) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .text-section {
+        width: 75%; /* Anpassning för större mobiler/surfplattor */
+    }
+
+    footer {
+        width: 220px; /* Justera footer-bredd */
+        right: 8%;
+    }
+
+    .coin-image {
+        width: 70px; /* Anpassa storlek på coin-bilden */
+        height: 70px;
+    }
 }
 
-/* Timer Bakgrund */
-.timer-background {
-    background: linear-gradient(to right, red, green, orange, yellow, blue);
-    -webkit-background-clip: text;
-    color: transparent;
-}
+/* För stora skärmar (datorer och TV) */
+@media (min-width: 1025px) {
+    .text-section {
+        width: 60%; /* Standardstorlek för stora skärmar */
+    }
 
-/* Button Styling */
-button {
-    padding: 10px 20px;
-    background: #ff9900;
-    border: none;
-    color: black;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    footer {
+        width: 250px; /* Standard footer-layout */
+        right: 10%; /* Standardmarginal från höger */
+    }
 
-button:hover {
-    background: #ff6600;
+    .coin-image {
+        width: 80px; /* Standardstorlek för coin-bilden */
+        height: 80px;
+    }
 }
