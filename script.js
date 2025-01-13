@@ -8,11 +8,14 @@ const videoSources = [
 const videoElement = document.getElementById("background-video");
 let currentVideoIndex = 0;
 
-// Spela nästa video i listan utan att pausas
+// Spela nästa video i listan
 function playNextVideo() {
     videoElement.src = videoSources[currentVideoIndex];
-    videoElement.load();  // Ladda nästa video direkt
-    videoElement.play();
+    
+    // När videon är redo att spelas, starta den
+    videoElement.oncanplaythrough = () => {
+        videoElement.play();
+    };
 
     // Lyssna på videoens slut
     videoElement.onended = () => {
