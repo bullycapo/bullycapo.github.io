@@ -1,46 +1,27 @@
-const videoSources = [
+const videos = [
     "monthlybtc.mp4",
-    "dailybtc.mp4",
+    "daillybtc.mp4",
     "quarterbtc.mp4",
     "weeklybtc.mp4"
 ];
 
-const videoElement = document.getElementById("background-video");
 let currentVideoIndex = 0;
+const backgroundVideo = document.getElementById("background-video");
 
-// Spela nästa video i listan
-function playNextVideo() {
-    videoElement.src = videoSources[currentVideoIndex];
+// Funktion som byter video utan att det syns några vita sekunder.
+function changeVideo() {
+    backgroundVideo.src = videos[currentVideoIndex];
+    backgroundVideo.load();
+    backgroundVideo.play();
     
-    // När videon är redo att spelas, starta den
-    videoElement.oncanplaythrough = () => {
-        videoElement.play();
-    };
-
-    // Lyssna på videoens slut
-    videoElement.onended = () => {
-        currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
-        playNextVideo();
+    // När videon är slut, byter vi till nästa.
+    backgroundVideo.onended = function() {
+        currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+        changeVideo();
     };
 }
 
-// Starta videosekvensen
-playNextVideo();
-
-// Timer Funktion
-const startDate = new Date("2022-11-21T00:00:00");
-const timerDisplay = document.getElementById("timer-display");
-
-function updateTimer() {
-    const now = new Date();
-    const elapsed = now - startDate;
-
-    const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((elapsed / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((elapsed / (1000 * 60)) % 60);
-    const seconds = Math.floor((elapsed / 1000) % 60);
-
-    timerDisplay.textContent = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
-}
-
-setInterval(updateTimer, 1000);
+// Starta videobytet direkt när sidan laddas
+window.onload = function() {
+    changeVideo();
+};
