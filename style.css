@@ -53,7 +53,7 @@ footer {
     gap: 20px;
     width: 100px; /* Bredden på den vertikala layouten */
     /* Justering av position för layouten från höger */
-    right: 10%; /* Ändra denna för att flytta layouten från höger */
+    right: 5%; /* Ändra denna för att flytta layouten från höger */
 }
 
 .footer-right {
