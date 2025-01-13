@@ -1,29 +1,29 @@
-// Startdatum för bullmarknaden
-const startDate = new Date('2022-11-21T00:00:00');
+// Synkronisera videor
+const videos = [
+    { id: "video-daily", offset: 0 },    // Ingen offset
+    { id: "video-weekly", offset: 2 },  // Starta 2 sekunder senare
+    { id: "video-monthly", offset: 0 }, // Ingen offset
+    { id: "video-quarter", offset: 3 }, // Starta 3 sekunder senare
+];
 
-// Funktion för att uppdatera timern
-function updateTimer() {
-    const now = new Date(); // Hämta nuvarande tid
-    const elapsed = now - startDate; // Skillnad i millisekunder
-
-    // Beräkna dagar, timmar, minuter och sekunder
-    const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((elapsed / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((elapsed / (1000 * 60)) % 60);
-    const seconds = Math.floor((elapsed / 1000) % 60);
-
-    // Visa tiden på sidan
-    document.getElementById('timer-display').innerText =
-        `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
-}
-
-// Uppdatera timern varje sekund
-setInterval(updateTimer, 1000);
-
-// Funktion för att kopiera adress
-function copyAddress() {
-    const address = document.getElementById('contract-address').innerText;
-    navigator.clipboard.writeText(address).then(() => {
-        alert('Contract Address copied!');
+window.onload = () => {
+    videos.forEach(videoObj => {
+        const video = document.getElementById(videoObj.id);
+        video.currentTime = videoObj.offset;
+        video.play();
     });
-}
+};
+
+// Timer-kod (från tidigare)
+const startDate = new Date("2022-11-21T00:00:00Z");
+setInterval(() => {
+    const now = new Date();
+    const elapsed = Math.floor((now - startDate) / 1000);
+    const days = Math.floor(elapsed / 86400);
+    const hours = Math.floor((elapsed % 86400) / 3600);
+    const minutes = Math.floor((elapsed % 3600) / 60);
+    const seconds = elapsed % 60;
+
+    document.getElementById("timer-display").textContent = 
+        `${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds`;
+}, 1000);
