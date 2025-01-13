@@ -30,11 +30,12 @@ body, html {
 .text-section {
     background: rgba(0, 0, 0, 0.7); /* Halvtransparent svart bakgrund */
     padding: 20px;
-    margin: 30px auto;
-    max-width: 60%;  /* Färre bredder för texten */
+    margin: 30px 10%;
+    border-radius: 10px;
     line-height: 1.8;
     text-align: left;
-    border-radius: 10px;
+    width: 33%; /* Halvera bredden på texten */
+    margin-left: 30px; /* Fyll vänstra sidan */
 }
 
 /* Footer Section */
@@ -50,23 +51,40 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.7); /* Svart bakgrund för hela layouten */
+    background-color: rgba(0, 128, 0, 0.7); /* Mörkgrön bakgrund */
     padding: 20px;
     border-radius: 10px;
-    width: 150px; /* Smal vertikal layout */
-    gap: 10px;
+    width: 200px; /* Gör layouten smal och vertikal */
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 /* Social Links */
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .social-links img {
     width: 30px;
     height: 30px;
-    margin-bottom: 10px;
     transition: transform 0.2s;
 }
 
 .social-links img:hover {
     transform: scale(1.2);
+}
+
+/* Ticker */
+.ticker {
+    margin: 10px 0;
+    font-size: 16px;
 }
 
 /* Coin Image */
@@ -94,7 +112,7 @@ footer {
 
 /* Contract Address */
 .contract {
-    text-align: right;
+    text-align: center;
 }
 
 button {
@@ -108,9 +126,4 @@ button {
 
 button:hover {
     background: #ff6600;
-}
-
-/* Styla texten */
-h1, p {
-    color: white;
 }
