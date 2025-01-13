@@ -1,40 +1,42 @@
-// Funktion för att spela videorna i ordning
-let videos = [
+const videoSources = [
     "monthlybtc.mp4",
-    "daillybtc.mp4",
+    "dailybtc.mp4",
     "quarterbtc.mp4",
     "weeklybtc.mp4"
 ];
 
-let videoIndex = 0;  // Startar med den första videon
-let videoElement = document.getElementById("background-video");
+const videoElement = document.getElementById("background-video");
+let currentVideoIndex = 0;
 
-// Funktion för att byta till nästa video
+// Spela nästa video i listan
 function playNextVideo() {
-    videoElement.src = videos[videoIndex];
+    videoElement.src = videoSources[currentVideoIndex];
     videoElement.play();
-    videoIndex = (videoIndex + 1) % videos.length;  // När vi når slutet loopar vi tillbaka
+
+    // Lyssna på videoens slut
+    videoElement.onended = () => {
+        currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+        playNextVideo();
+    };
 }
 
-// När en video är slut, spela nästa video
-videoElement.addEventListener("ended", playNextVideo);
-
-// Starta uppspelning från början
+// Starta videosekvensen
 playNextVideo();
 
-// Timer för att visa tiden sedan 21 november 2022
+// Timer Funktion
+const startDate = new Date("2022-11-21T00:00:00");
+const timerDisplay = document.getElementById("timer-display");
+
 function updateTimer() {
-    const startDate = new Date("2022-11-21");
-    const currentDate = new Date();
-    const timeDiff = currentDate - startDate;
+    const now = new Date();
+    const elapsed = now - startDate;
 
-    const days = Math.floor(timeDiff / (1000 * 3600 * 24));
-    const hours = Math.floor((timeDiff % (1000 * 3600 * 24)) / (1000 * 3600));
-    const minutes = Math.floor((timeDiff % (1000 * 3600)) / (1000 * 60));
-    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+    const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((elapsed / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((elapsed / (1000 * 60)) % 60);
+    const seconds = Math.floor((elapsed / 1000) % 60);
 
-    document.getElementById("timer-display").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    timerDisplay.textContent = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
 }
 
-// Uppdatera timern varje sekund
 setInterval(updateTimer, 1000);
