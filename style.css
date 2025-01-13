@@ -24,18 +24,20 @@ body, html {
     position: relative;
     z-index: 1;
     padding: 20px;
+    color: white;
 }
 
 /* Text Sektion */
 .text-section {
-    background: rgba(0, 0, 0, 0.3); /* Halvtransparent svart bakgrund */
+    background: rgba(0, 0, 0, 0.4); /* Halvtransparent svart bakgrund */
     padding: 20px;
     margin: 30px 10%;
     border-radius: 10px;
     line-height: 1.8;
     text-align: left;
-    width: 50%;
-    margin-left: 25%; /* Centrerar texten */
+    width: 70%; /* Halv bredd från vänster till nästan mitten */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Footer Section */
@@ -45,21 +47,26 @@ footer {
     right: 0;
     padding: 20px;
     text-align: right;
+    z-index: 10; /* Placera på toppen av videon */
 }
 
+/* Footer Right Column */
 .footer-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
-    background-color: rgba(0, 0, 0, 0.3); /* Halvtransparent svart bakgrund */
+    align-items: center;
+    background-color: rgba(0, 128, 0, 0.4); /* Grön bakgrund */
     padding: 20px;
     border-radius: 10px;
+    width: 100px; /* Smal vertikal layout */
+    gap: 15px;
 }
 
-.social-links {
+/* Social Links */
+.social-links p {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 10px; /* Avstånd mellan text och bild */
 }
 
 .social-links img {
@@ -75,16 +82,14 @@ footer {
 /* Coin Image */
 .coin-wrapper {
     margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
 }
 
 .coin-image {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    animation: spin 4s linear infinite;
-    object-fit: cover;
+    animation: spin 5s linear infinite;
+    object-fit: cover; /* Ser till att bilden fyller sin runda form */
 }
 
 /* Coin Image Animation */
@@ -113,4 +118,12 @@ button {
 
 button:hover {
     background: #ff6600;
+}
+
+/* Timer Bakgrund */
+#timer-display {
+    background: linear-gradient(to right, red, yellow, green, blue, purple); /* Regnbågsfärger */
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: black;
 }
