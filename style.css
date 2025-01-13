@@ -8,73 +8,61 @@ body, html {
     overflow-x: hidden;
 }
 
-/* Video Container */
-.video-container {
+/* Video Bakgrund */
+#background-video {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-video {
-    width: 25%;
-    height: 100%;
     object-fit: cover;
+    z-index: -1;
 }
 
-/* Content */
+/* Innehåll */
 .content {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-end;
+    align-items: flex-end;
     padding: 20px;
 }
 
-/* Text Section */
-.text-section {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    margin: 30px 10%;
-    border-radius: 10px;
-    line-height: 1.8;
-    text-align: left;
-}
-
-/* Footer */
-footer {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
+/* Coin Sektion */
+.ca-section {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.coin-wrapper {
+    margin-bottom: 10px;
+}
+
+.coin-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: spin 5s linear infinite;
+}
+
+/* Animering för coinbild */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Kontrakt Adress */
+.contract {
     text-align: right;
-    z-index: 2;
-}
-
-.footer-section {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.ticker, .social-links, .contract {
-    margin: 5px 0;
-}
-
-.social-links img {
-    width: 30px;
-    margin: 0 5px;
-    transition: transform 0.2s;
-}
-
-.social-links img:hover {
-    transform: scale(1.2);
 }
 
 button {
@@ -84,8 +72,25 @@ button {
     color: black;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 5px;
 }
 
 button:hover {
     background: #ff6600;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.social-links img {
+    width: 30px;
+    margin: 5px;
+    transition: transform 0.2s;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
 }
