@@ -1,15 +1,14 @@
-/* Grundläggande inställningar */
+/* Grundinställningar */
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     color: white;
-    text-align: center;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
-/* Bakgrundsvideo */
+/* Video Bakgrund */
 #background-video {
     position: fixed;
     top: 0;
@@ -20,32 +19,30 @@ body, html {
     z-index: -1;
 }
 
-/* Innehållsbehållare */
+/* Innehåll */
 .content {
     position: relative;
     z-index: 1;
     padding: 20px;
 }
 
-/* Header */
-header h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-/* Textsektion */
+/* Text Sektion */
 .text-section {
+    background: rgba(0, 0, 0, 0.6); /* Halvtransparent bakgrund */
+    padding: 20px;
     margin: 30px 10%;
-    text-align: left;
+    border-radius: 10px;
     line-height: 1.8;
+    text-align: left;
 }
 
-/* Coinsektion */
+/* Coin Sektion */
 .ca-section {
     margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .coin-and-address {
@@ -55,17 +52,17 @@ header h1 {
 }
 
 .coin-wrapper {
-    margin-right: 20px; /* Avstånd från copy address */
+    margin-right: 20px;
 }
 
 .coin-image {
     width: 100px;
     height: 100px;
-    border-radius: 50%; /* Gör bilden rund */
-    animation: spin 5s linear infinite; /* Snurrar */
+    border-radius: 50%; /* Rund bild */
+    animation: spin 5s linear infinite;
 }
 
-/* Snurrande coinbild */
+/* Animering för coinbild */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -75,46 +72,37 @@ header h1 {
     }
 }
 
-/* Kontraktsadress */
+/* Kontrakt Adress */
 .contract {
     text-align: left;
 }
 
-/* Copy Address Button */
 button {
     padding: 10px 20px;
     background: #ff9900;
-    color: black;
     border: none;
+    color: black;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
 }
 
 button:hover {
     background: #ff6600;
 }
 
-/* Social Media */
+/* Footer */
 footer {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    text-align: right;
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
 }
 
 .social-links img {
     width: 30px;
-    margin: 5px;
+    margin: 0 10px;
     transition: transform 0.2s;
 }
 
 .social-links img:hover {
     transform: scale(1.2);
-}
-
-/* Ticker */
-.ticker {
-    font-weight: bold;
-    font-size: 1.2em;
 }
