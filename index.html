@@ -1,5 +1,4 @@
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,15 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Video Bakgrund -->
+    <!-- Video Background -->
     <video autoplay muted loop id="background-video"></video>
 
     <div class="content">
-        <!-- Header Sektion -->
+        <!-- Header Section -->
         <header>
             <h1>BullsHeadedForTheCliffOrConvinceMe</h1>
         </header>
 
+        <!-- Main Section -->
+        <main>
+            <!-- Text Section -->
         <section class="text-left">
             <p>Is This Really a Bull Market?</p>
             <p>It’s been <span id="timer-display"></span> </p>
@@ -35,41 +37,32 @@
         </section>
     </div>
 
-    <!-- Footer Sektion -->
-    <footer>
-        <div class="footer-right">
-            <!-- Sociala Medier -->
-            <div class="social-links">
-                <div>
-                    <span>X</span>
-                    <a href="https://x.com/hashtag/BullsHeadedForTheCliffOrConvinceMe?src=hashtag_click" target="_blank">
-                        <img src="x.png" alt="X">
-                    </a>
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-right">
+                <!-- Social Links -->
+                <div class="social-links">
+                    <p>X <a href="https://x.com/hashtag/BullsHeadedForTheCliffOrConvinceMe?src=hashtag_click" target="_blank"><img src="x.png" alt="X"></a></p>
+                    <p>TG <a href="https://web.telegram.org/a/#-1002301556313" target="_blank"><img src="tg.jpg" alt="TG"></a></p>
                 </div>
-                <div>
-                    <span>TG</span>
-                    <a href="https://web.telegram.org/a/#-1002301556313" target="_blank">
-                        <img src="tg.jpg" alt="TG">
-                    </a>
+
+                <!-- Ticker -->
+                <h4 class="ticker">Ticker: $bullycapo</h4>
+
+                <!-- Coin Image -->
+                <div class="coin-wrapper">
+                    <img src="bullycapo.png" alt="Bully Capo Coin" class="coin-image">
+                </div>
+
+                <!-- Contract Address -->
+                <div class="contract">
+                    <h3>CA</h3>
+                    <p id="contract-address">Coming soon</p>
+                    <button onclick="copyAddress()">Copy Address</button>
                 </div>
             </div>
-
-            <!-- Ticker -->
-            <h4 class="ticker">Ticker: $bullycapo</h4>
-
-            <!-- Coin Image -->
-            <div class="coin-wrapper">
-                <img src="bullycapo.png" alt="Bully Capo Coin" class="coin-image">
-            </div>
-
-            <!-- Contract Address -->
-            <div class="contract">
-                <h3>CA</h3>
-                <p id="contract-address">Coming soon</p>
-                <button onclick="copyAddress()">Copy Address</button>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
