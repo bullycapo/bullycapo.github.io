@@ -1,32 +1,42 @@
-// Lista över videor
-const videos = [
+const videoSources = [
     "monthlybtc.mp4",
-    "daillybtc.mp4",
+    "dailybtc.mp4",
     "quarterbtc.mp4",
     "weeklybtc.mp4"
 ];
 
-// Videospelare
 const videoElement = document.getElementById("background-video");
 let currentVideoIndex = 0;
 
-// Laddar och spelar nästa video
+// Spela nästa video i listan
 function playNextVideo() {
-    videoElement.src = videos[currentVideoIndex];
+    videoElement.src = videoSources[currentVideoIndex];
     videoElement.play();
-    currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+
+    // Lyssna på videoens slut
+    videoElement.onended = () => {
+        currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+        playNextVideo();
+    };
 }
 
-// Event Listener för att spela nästa video när den nuvarande är slut
-videoElement.addEventListener("ended", playNextVideo);
-
-// Starta med första videon
+// Starta videosekvensen
 playNextVideo();
 
-// Kopiera CA-funktion
-function copyAddress() {
-    const address = document.getElementById("contract-address").textContent;
-    navigator.clipboard.writeText(address).then(() => {
-        alert("Address copied!");
-    });
+// Timer Funktion
+const startDate = new Date("2022-11-21T00:00:00");
+const timerDisplay = document.getElementById("timer-display");
+
+function updateTimer() {
+    const now = new Date();
+    const elapsed = now - startDate;
+
+    const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((elapsed / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((elapsed / (1000 * 60)) % 60);
+    const seconds = Math.floor((elapsed / 1000) % 60);
+
+    timerDisplay.textContent = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
 }
+
+setInterval(updateTimer, 1000);
