@@ -42,7 +42,7 @@ body, html {
 footer {
     position: fixed;
     bottom: 0;
-    right: 1;
+    right: 0;
     padding: 20px;
     text-align: right;
 }
