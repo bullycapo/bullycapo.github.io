@@ -5,8 +5,7 @@ body, html {
     font-family: Arial, sans-serif;
     color: white;
     height: 100%;
-    overflow-x: hidden;
-    background-color: black;
+    overflow: hidden;
 }
 
 /* Video Bakgrund */
@@ -20,27 +19,16 @@ body, html {
     z-index: -1;
 }
 
-/* Textsektion */
+/* Text Sektion */
 .text-section {
     position: absolute;
-    top: 10%;
-    left: 5%;
-    width: 36%; /* Tar upp en tredjedel av sidans bredd */
-    background: rgba(0, 0, 0, 0.7); /* Halvtransparent svart */
+    top: 15%;
+    left: 10%;
+    width: 36%;
+    background: rgba(0, 0, 0, 0.4); /* Halvtransparent svart */
     padding: 20px;
     border-radius: 10px;
     line-height: 1.8;
-    text-align: left;
-    color: white;
-}
-
-/* Timer med färgbyte */
-#timer-display {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: red; /* Första färgen */
-    transition: background-color 0.5s ease;
 }
 
 /* Footer Sektion */
@@ -48,21 +36,29 @@ footer {
     position: fixed;
     bottom: 0;
     right: 5%;
-    background-color: rgba(255, 165, 0, 0.4); /* Orange bakgrund */
     padding: 20px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
     align-items: flex-end;
-    width: 126px;
+    gap: 20px;
+    animation: changeBackgroundColor 1s infinite;
 }
 
-/* Sociala medier */
+/* Bakgrundsändring för footer */
+@keyframes changeBackgroundColor {
+    0% { background-color: rgba(50, 0, 0, 0.4); }
+    25% { background-color: rgba(0, 50, 0, 0.4); }
+    50% { background-color: rgba(0, 0, 50, 0.4); }
+    75% { background-color: rgba(50, 50, 0, 0.4); }
+    100% { background-color: rgba(50, 0, 50, 0.4); }
+}
+
+/* Social Links */
 .social-links img {
     width: 30px;
     height: 30px;
-    cursor: pointer;
+    margin-bottom: 10px;
     transition: transform 0.2s;
 }
 
@@ -70,23 +66,20 @@ footer {
     transform: scale(1.2);
 }
 
-/* Ticker */
-.ticker {
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
+/* Coin Image */
+.coin-wrapper {
+    margin-bottom: 10px;
 }
 
-/* Coinbild */
 .coin-image {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     animation: spin 5s linear infinite;
-    object-fit: cover; /* Ser till att bilden fyller sin runda form */
+    object-fit: cover;
 }
 
-/* Coin Animation */
+/* Coin Image Animation */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -96,20 +89,13 @@ footer {
     }
 }
 
-/* Contract Adress */
-.contract {
-    text-align: center;
-}
-
-button {
-    padding: 8px 15px;
-    background: #ff9900;
-    border: none;
-    color: black;
+/* Timer */
+.timer {
+    display: inline-block;
+    padding: 5px 10px;
+    background: black;
     border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #ff6600;
+    animation: changeBackgroundColor 1s infinite;
+    color: white;
+    font-weight: bold;
 }
