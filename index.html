@@ -7,21 +7,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Video Background -->
-    <video autoplay muted loop id="background-video">
-        <source src="monthlybtc.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <!-- Video Background Container -->
+    <div class="video-container">
+        <video autoplay muted loop id="video-daily">
+            <source src="daillybtc.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video autoplay muted loop id="video-weekly">
+            <source src="weeklybtc.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video autoplay muted loop id="video-monthly">
+            <source src="monthlybtc.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video autoplay muted loop id="video-quarter">
+            <source src="quarterbtc.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
+    <!-- Content -->
     <div class="content">
-        <!-- Header Section -->
         <header>
             <h1>BullsHeadedForTheCliffOrConvinceMe</h1>
         </header>
 
-        <!-- Main Section -->
         <main>
-            <!-- Text Section -->
             <section class="text-section">
                 <p>Is This Really a Bull Market?</p>
                 <p>It’s been <span id="timer-display"></span> since the so-called "bull market" began, but have we truly profited?</p>
@@ -31,30 +43,23 @@
                 <p>Let’s prove it together—or expose the truth.</p>
                 <p>Will this coin be the spark of a real bull run, or just another illusion? You decide. 🚀</p>
             </section>
-
-            <!-- Coin Section -->
-            <section class="ca-section">
-                <div class="coin-and-address">
-                    <div class="coin-wrapper">
-                        <img src="bullycapo.png" alt="Bully Capo Coin" class="coin-image">
-                    </div>
-                    <div class="contract">
-                        <h3>CA</h3>
-                        <p id="contract-address">Coming soon</p>
-                        <button onclick="copyAddress()">Copy Address</button>
-                    </div>
-                </div>
-            </section>
         </main>
 
-        <!-- Footer Section -->
+        <!-- Footer -->
         <footer>
-            <h4>Ticker: <span class="ticker">$bullycapo</span></h4>
-            <div class="social-links">
-                <a href="https://x.com/hashtag/BullsHeadedForTheCliffOrConvinceMe?src=hashtag_click" target="_blank">
-                    <img src="x.png" alt="X"></a>
-                <a href="https://web.telegram.org/a/#-1002301556313" target="_blank">
-                    <img src="tg.jpg" alt="TG"></a>
+            <div class="footer-section">
+                <div class="ticker">Ticker: $bullycapo</div>
+                <div class="social-links">
+                    <a href="https://x.com/hashtag/BullsHeadedForTheCliffOrConvinceMe?src=hashtag_click" target="_blank">
+                        <img src="x.png" alt="X"></a>
+                    <a href="https://web.telegram.org/a/#-1002301556313" target="_blank">
+                        <img src="tg.jpg" alt="TG"></a>
+                </div>
+                <div class="contract">
+                    <h3>CA</h3>
+                    <p id="contract-address">Coming soon</p>
+                    <button onclick="copyAddress()">Copy Address</button>
+                </div>
             </div>
         </footer>
     </div>
