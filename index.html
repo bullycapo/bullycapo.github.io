@@ -7,18 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Video Bakgrund -->
-    <video id="background-video" autoplay muted playsinline></video>
-
-
-    <div class="content">
-        <!-- Header Section -->
-        <header>
-            <h1>BullsHeadedForTheCliffOrConvinceMe</h1>
-        </header>
-
-        <!-- Main Section -->
-        <main>
+    <!-- Video Background -->
+    <video autoplay muted id="background-video"></video>
             <!-- Text Section -->
         <section class="text-left">
             <p>Is This Really a Bull Market?</p>
@@ -39,8 +29,7 @@
     </div>
 
         <!-- Footer Section -->
-       <footer>
-        <!-- Sociala medier -->
+    <footer>
         <div class="social-links">
             <a href="https://x.com/hashtag/BullsHeadedForTheCliffOrConvinceMe?src=hashtag_click" target="_blank">
                 <img src="x.png" alt="X">
@@ -50,16 +39,15 @@
             </a>
         </div>
 
-        <!-- Ticker -->
-        <div class="ticker">$bullycapo</div>
+        <h4 class="ticker">$bullycapo</h4>
 
-        <!-- Coinbild -->
-        <img src="bullycapo.png" alt="Bully Capo Coin" class="coin-image">
+        <div class="coin-wrapper">
+            <img src="bullycapo.png" alt="Bully Capo Coin" class="coin-image">
+        </div>
 
-        <!-- Contract Adress -->
         <div class="contract">
-            <h4>CA</h4>
-            <p>Coming soon</p>
+            <h3>CA</h3>
+            <p id="contract-address">Coming soon</p>
             <button onclick="copyAddress()">Copy Address</button>
         </div>
     </footer>
