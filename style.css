@@ -17,7 +17,6 @@ body, html {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    opacity: 0.9;
 }
 
 /* Innehåll */
@@ -29,23 +28,14 @@ body, html {
 
 /* Text Sektion */
 .text-section {
-    background: rgba(0, 0, 0, 0.4); /* Halvtransparent svart bakgrund */
+    background: rgba(0, 0, 0, 0.3); /* Halvtransparent svart bakgrund */
     padding: 20px;
     margin: 30px 10%;
     border-radius: 10px;
     line-height: 1.8;
     text-align: left;
-}
-
-/* Text Section for the first 1/3 of the screen */
-.text-left {
-    width: 33%;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    background: rgba(0, 0, 0, 0.4); /* Halvtransparent svart bakgrund */
-    padding: 20px;
-    border-radius: 10px;
+    width: 50%;
+    margin-left: 25%; /* Centrerar texten */
 }
 
 /* Footer Section */
@@ -61,20 +51,15 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 20px;
-    background: rgba(0, 128, 0, 0.7); /* Grön bakgrund */
-    padding: 10px;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.3); /* Halvtransparent svart bakgrund */
+    padding: 20px;
     border-radius: 10px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
 }
 
-/* Social Links */
 .social-links {
     display: flex;
     gap: 10px;
-    align-items: center;
 }
 
 .social-links img {
@@ -87,25 +72,19 @@ footer {
     transform: scale(1.2);
 }
 
-/* Ticker Text */
-.ticker {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: right;
-    color: white;
-}
-
 /* Coin Image */
 .coin-wrapper {
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .coin-image {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    animation: spin 5s linear infinite;
-    object-fit: cover; /* Ser till att bilden fyller sin runda form */
+    animation: spin 4s linear infinite;
+    object-fit: cover;
 }
 
 /* Coin Image Animation */
@@ -121,7 +100,6 @@ footer {
 /* Contract Address */
 .contract {
     text-align: right;
-    margin-top: 20px;
 }
 
 button {
