@@ -1,56 +1,86 @@
-/* Global styling */
+/* Grundläggande inställningar */
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    color: white;
     text-align: center;
     height: 100%;
-    background: url('candlestick-pattern.png') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
+    overflow: hidden;
+}
+
+/* Bakgrundsvideo */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Innehållsbehållare */
+.content {
     position: relative;
+    z-index: 1;
+    padding: 20px;
 }
 
 /* Header */
-header {
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
+header h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-/* Introduction section */
-.introduction {
-    margin: 20px auto;
-    width: 90%;
-    max-width: 800px;
+/* Textsektion */
+.text-section {
+    margin: 30px 10%;
     text-align: left;
     line-height: 1.8;
 }
 
-/* CA section and coin image */
+/* Coinsektion */
 .ca-section {
+    margin-top: 50px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
-    position: absolute;
-    bottom: 10%;
-    left: 5%;
+}
+
+.coin-and-address {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .coin-wrapper {
-    margin-right: 20px;
+    margin-right: 20px; /* Avstånd från copy address */
 }
 
 .coin-image {
     width: 100px;
     height: 100px;
-    border-radius: 50%;
-    animation: spin 4s linear infinite;
+    border-radius: 50%; /* Gör bilden rund */
+    animation: spin 5s linear infinite; /* Snurrar */
 }
 
-.contract-info h3 {
-    margin: 0 0 10px;
+/* Snurrande coinbild */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
+/* Kontraktsadress */
+.contract {
+    text-align: left;
+}
+
+/* Copy Address Button */
 button {
     padding: 10px 20px;
     background: #ff9900;
@@ -65,44 +95,17 @@ button:hover {
     background: #ff6600;
 }
 
-/* Footer */
+/* Social Media */
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    margin: 0 auto;
-}
-
-.ticker {
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-.social-links {
-    display: flex;
-    align-items: center;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    margin-left: 20px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    text-align: right;
 }
 
 .social-links img {
     width: 30px;
-    margin-right: 5px;
+    margin: 5px;
     transition: transform 0.2s;
 }
 
@@ -110,12 +113,8 @@ footer {
     transform: scale(1.2);
 }
 
-/* Coin spinning animation */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+/* Ticker */
+.ticker {
+    font-weight: bold;
+    font-size: 1.2em;
 }
