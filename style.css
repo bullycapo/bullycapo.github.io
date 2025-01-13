@@ -23,22 +23,47 @@ body, html {
 .content {
     position: relative;
     z-index: 1;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: flex-end;
-    align-items: flex-end;
     padding: 20px;
 }
 
-/* Coin Sektion */
-.ca-section {
+/* Text Sektion */
+.text-section {
+    background: rgba(0, 0, 0, 0.6); /* Halvtransparent bakgrund */
+    padding: 20px;
+    margin: 30px 10%;
+    border-radius: 10px;
+    line-height: 1.8;
+    text-align: left;
+}
+
+/* Footer Section */
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    text-align: right;
+}
+
+.footer-right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-bottom: 20px;
+    gap: 20px;
 }
 
+/* Social Links */
+.social-links img {
+    width: 30px;
+    margin-bottom: 10px;
+    transition: transform 0.2s;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
+}
+
+/* Coin Image */
 .coin-wrapper {
     margin-bottom: 10px;
 }
@@ -50,7 +75,7 @@ body, html {
     animation: spin 5s linear infinite;
 }
 
-/* Animering för coinbild */
+/* Coin Image Animation */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -60,7 +85,7 @@ body, html {
     }
 }
 
-/* Kontrakt Adress */
+/* Contract Address */
 .contract {
     text-align: right;
 }
@@ -72,25 +97,8 @@ button {
     color: black;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 5px;
 }
 
 button:hover {
     background: #ff6600;
-}
-
-/* Footer */
-footer {
-    margin-top: 20px;
-    text-align: right;
-}
-
-.social-links img {
-    width: 30px;
-    margin: 5px;
-    transition: transform 0.2s;
-}
-
-.social-links img:hover {
-    transform: scale(1.2);
 }
