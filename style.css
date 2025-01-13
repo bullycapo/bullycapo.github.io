@@ -30,7 +30,7 @@ body, html {
 .text-section {
     background: rgba(0, 0, 0, 0.3); /* Halvtransparent svart bakgrund */
     padding: 20px;
-    margin: 10px 10%;
+    margin: 40px 10%;
     border-radius: 10px;
     line-height: 1.8;
     text-align: left;
