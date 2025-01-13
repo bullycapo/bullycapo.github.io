@@ -1,22 +1,30 @@
-// Timer-funktion
-const timerDisplay = document.getElementById('timer-display');
-const startDate = new Date('2022-11-21T00:00:00');
+// Lista över videor att spela upp
+const videoFiles = [
+    "monthlybtc.mp4",
+    "dailybtc.mp4",
+    "quarterbtc.mp4",
+    "weeklybtc.mp4"
+];
 
-function updateTimer() {
-    const now = new Date();
-    const diff = now - startDate;
+// Hämta videoelementet
+const videoElement = document.getElementById('background-video');
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
+// Håll koll på vilken video som spelas
+let currentVideoIndex = 0;
 
-    timerDisplay.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+// Funktion för att spela nästa video
+function playNextVideo() {
+    // Ställ in src till nästa video
+    videoElement.src = videoFiles[currentVideoIndex];
+    videoElement.load();
+    videoElement.play();
 
-    // Byt bakgrundsfärg varje sekund
-    const colors = ['red', 'green', 'blue', 'yellow', 'purple'];
-    timerDisplay.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    // Uppdatera index för nästa video
+    currentVideoIndex = (currentVideoIndex + 1) % videoFiles.length; // Loop tillbaka till början
 }
 
-// Uppdatera timern varje sekund
-setInterval(updateTimer, 1000);
+// Lyssna på när en video är slut och spela nästa
+videoElement.addEventListener('ended', playNextVideo);
+
+// Starta uppspelningen
+playNextVideo();
