@@ -51,10 +51,10 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(0, 128, 0, 0.7); /* Mörkgrön bakgrund */
+    background-color: rgba(0, 128, 0, 0.4); /* Mörkgrön bakgrund */
     padding: 20px;
     border-radius: 10px;
-    width: 200px; /* Gör layouten smal och vertikal */
+    width: 100px; /* Gör layouten smal och vertikal */
 }
 
 .social-links {
