@@ -1,4 +1,4 @@
-/* Grundinställningar */
+/* Grundinställningar - Desktop och större skärmar */
 body, html {
     margin: 0;
     padding: 0;
@@ -38,23 +38,43 @@ body, html {
     text-align: left;
 }
 
-/* Footer Section */
+/* Footer Sektion */
 footer {
     position: fixed;
     bottom: 0;
-    right: 0;
     padding: 20px;
     background-color: rgba(0, 50, 0, 0.4);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     gap: 20px;
-    width: 250px; /* Bredden på layouten */
-    right: 5%; /* Flytta layouten från höger */
+    width: 250px;
+    right: 5%; /* Flytta layouten lite från höger */
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
 }
 
 /* Coin Image */
+.coin-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
 .coin-image {
     width: 80px;
     height: 80px;
@@ -63,68 +83,53 @@ footer {
     object-fit: cover;
 }
 
-/* Responsiva Media Queries */
+/* Timer */
+.timer-background {
+    font-size: 1.2em;
+    background: linear-gradient(to right, red, green, orange, yellow, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+}
 
-/* För mindre skärmar (mobiler) */
-@media (max-width: 768px) {
+/* RESPONSIV DESIGN */
+
+/* För mobila enheter - Mindre än 768px */
+@media screen and (max-width: 768px) {
     .text-section {
-        width: 90%; /* Gör textsektionen bredare för små skärmar */
-        padding: 15px;
-        font-size: 14px;
+        width: 90%; /* Gör texten bredare på små skärmar */
+        font-size: 0.9em; /* Minska textstorlek */
+        margin: 10px auto;
     }
 
     footer {
-        width: 200px; /* Justera footer-bredd för mobiler */
-        right: 5%; /* Närmare mitten på små skärmar */
-        padding: 15px;
-    }
-
-    .coin-image {
-        width: 60px; /* Gör coin-bilden mindre på mobiler */
-        height: 60px;
+        width: 90%; /* Gör footer bredare för mobilskärmar */
+        bottom: 5%; /* Flytta uppåt från botten */
+        right: 5%; /* Flytta in från höger */
+        gap: 15px;
     }
 
     .social-links img {
-        width: 25px; /* Minska ikoner för sociala medier */
+        width: 25px; /* Minska storlek på ikoner */
         height: 25px;
     }
 
-    button {
-        padding: 8px 15px; /* Mindre knappstorlek */
-        font-size: 12px;
+    .coin-image {
+        width: 60px; /* Mindre snurrande coin för mobiler */
+        height: 60px;
     }
 }
 
-/* För mellan skärmar (surfplattor) */
-@media (min-width: 768px) and (max-width: 1024px) {
+/* För mindre laptops och surfplattor - Mellan 768px och 1024px */
+@media screen and (max-width: 1024px) {
     .text-section {
-        width: 75%; /* Anpassning för större mobiler/surfplattor */
+        width: 75%; /* Gör texten bredare */
+        font-size: 1em;
+        margin: 20px auto;
     }
 
     footer {
-        width: 220px; /* Justera footer-bredd */
-        right: 8%;
-    }
-
-    .coin-image {
-        width: 70px; /* Anpassa storlek på coin-bilden */
-        height: 70px;
-    }
-}
-
-/* För stora skärmar (datorer och TV) */
-@media (min-width: 1025px) {
-    .text-section {
-        width: 60%; /* Standardstorlek för stora skärmar */
-    }
-
-    footer {
-        width: 250px; /* Standard footer-layout */
-        right: 10%; /* Standardmarginal från höger */
-    }
-
-    .coin-image {
-        width: 80px; /* Standardstorlek för coin-bilden */
-        height: 80px;
+        width: 200px; /* Mindre footer för mellan-storlek skärmar */
+        right: 7%; /* Flytta in lite från höger */
+        bottom: 10%;
     }
 }
