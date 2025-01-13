@@ -19,20 +19,25 @@ body, html {
     z-index: -1;
 }
 
-/* Textsektion */
-.text-section {
+/* Innehåll */
+.content {
     position: relative;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.7); /* Halvtransparent svart bakgrund */
     padding: 20px;
-    margin: 30px 5%;
-    border-radius: 10px;
-    line-height: 1.8;
-    text-align: left;
-    max-width: 50%; /* Begränsar bredden till hälften */
 }
 
-/* Footer Sektion */
+/* Text Sektion */
+.text-section {
+    background: rgba(0, 0, 0, 0.7); /* Halvtransparent svart bakgrund */
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 60%;  /* Färre bredder för texten */
+    line-height: 1.8;
+    text-align: left;
+    border-radius: 10px;
+}
+
+/* Footer Section */
 footer {
     position: fixed;
     bottom: 0;
@@ -41,20 +46,22 @@ footer {
     text-align: right;
 }
 
-.footer-container {
-    background: rgba(0, 0, 0, 0.7); /* Mild svart bakgrund */
-    padding: 10px;
-    border-radius: 10px;
+.footer-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 20px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Svart bakgrund för hela layouten */
+    padding: 20px;
+    border-radius: 10px;
+    width: 150px; /* Smal vertikal layout */
+    gap: 10px;
 }
 
 /* Social Links */
 .social-links img {
     width: 30px;
     height: 30px;
+    margin-bottom: 10px;
     transition: transform 0.2s;
 }
 
@@ -72,7 +79,7 @@ footer {
     height: 80px;
     border-radius: 50%;
     animation: spin 5s linear infinite;
-    object-fit: cover;
+    object-fit: cover; /* Ser till att bilden fyller sin runda form */
 }
 
 /* Coin Image Animation */
@@ -85,7 +92,11 @@ footer {
     }
 }
 
-/* Copy Button */
+/* Contract Address */
+.contract {
+    text-align: right;
+}
+
 button {
     padding: 10px 20px;
     background: #ff9900;
@@ -97,4 +108,9 @@ button {
 
 button:hover {
     background: #ff6600;
+}
+
+/* Styla texten */
+h1, p {
+    color: white;
 }
