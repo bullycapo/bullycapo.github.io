@@ -1,3 +1,13 @@
+/* Grundinställningar */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: black;
+    overflow-y: scroll;
+}
+
 /* Video Bakgrund */
 #background-video {
     position: fixed;
@@ -8,61 +18,48 @@
     min-width: 100%;
     min-height: 100%;
     transform: translate(-50%, -50%);
-    object-fit: cover; /* Skalar proportionellt och täcker hela skärmen */
+    object-fit: cover;
     z-index: -1;
 }
 
-/* För mycket små skärmar */
-@media screen and (max-width: 768px) {
-    #background-video {
-        height: 100%;
-        width: auto;
-    }
-}
-
-
-/* Roadmap */
-.roadmap {
-    margin: 50px auto;
+/* Text Section */
+.text-section {
     padding: 20px;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
-    color: white;
+    width: 36%;
+    margin: 50px auto;
+}
+
+/* Roadmap Section */
+.roadmap-section {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    margin: 20px auto;
     width: 80%;
-    line-height: 1.8;
 }
 
-.roadmap h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.roadmap ul {
-    list-style: none;
-    padding: 0;
-}
-
-.roadmap li {
-    margin: 10px 0;
-    font-size: 1.1rem;
-}
-
-/* Timer with color-changing background */
-#timer {
-    display: inline-block;
+/* Timer */
+.timer {
     padding: 5px 10px;
-    background: black;
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 5px;
-    animation: colorChange 1s infinite;
-    color: white;
-    font-weight: bold;
+    animation: changeColor 1s infinite;
 }
 
-/* Animation for timer background */
-@keyframes colorChange {
-    0% { background-color: rgba(255, 0, 0, 0.7); }
-    25% { background-color: rgba(0, 255, 0, 0.7); }
-    50% { background-color: rgba(0, 0, 255, 0.7); }
-    75% { background-color: rgba(255, 255, 0, 0.7); }
-    100% { background-color: rgba(255, 0, 255, 0.7); }
+/* Timer Animation */
+@keyframes changeColor {
+    0% { background-color: red; }
+    50% { background-color: green; }
+    100% { background-color: blue; }
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 20px;
+    gap: 10px;
 }
