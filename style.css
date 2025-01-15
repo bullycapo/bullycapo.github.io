@@ -22,6 +22,15 @@ body, html {
     z-index: -1;
 }
 
+/* För mycket små skärmar */
+@media screen and (max-width: 768px) {
+    #background-video {
+        height: 100%;
+        width: auto;
+    }
+}
+
+
 
 /* Text Sektion */
 .text-left {
