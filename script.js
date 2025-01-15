@@ -1,3 +1,23 @@
+// Spela bakgrundsvideor i loop
+const videoSources = [
+    "monthlybtc.mp4",
+    "dailybtc.mp4",
+    "quarterbtc.mp4",
+    "weeklybtc.mp4",
+];
+
+let videoIndex = 0;
+const videoElement = document.getElementById("background-video");
+
+function playNextVideo() {
+    videoElement.src = videoSources[videoIndex];
+    videoElement.play();
+    videoIndex = (videoIndex + 1) % videoSources.length;
+}
+
+videoElement.addEventListener("ended", playNextVideo);
+playNextVideo();
+
 // Timer-funktion
 function updateTimer() {
     const launchDate = new Date("2022-11-21T00:00:00");
@@ -13,4 +33,3 @@ function updateTimer() {
 }
 
 setInterval(updateTimer, 1000);
-updateTimer();
