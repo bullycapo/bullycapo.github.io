@@ -58,19 +58,30 @@ footer {
     margin: 5px;
 }
 
-/* Timer Animation */
-.timer {
-    padding: 5px 10px;
-    border-radius: 5px;
-    animation: rainbowBackground 3s infinite;
+/* Coin Image */
+.coin-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: spin 5s linear infinite;
+    object-fit: cover;
 }
 
-/* Rainbow Animation */
+/* Animationer */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes rainbowBackground {
     0% { background-color: red; }
     20% { background-color: orange; }
-    50% { background-color: yellow; }
+    40% { background-color: yellow; }
     60% { background-color: green; }
-    85% { background-color: blue; }
+    80% { background-color: blue; }
     100% { background-color: purple; }
 }
