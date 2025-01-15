@@ -1,4 +1,4 @@
-// Spela bakgrundsvideor i loop
+// Videofiler
 const videoSources = [
     "monthlybtc.mp4",
     "dailybtc.mp4",
@@ -9,12 +9,17 @@ const videoSources = [
 let videoIndex = 0;
 const videoElement = document.getElementById("background-video");
 
+// Spela nästa video
 function playNextVideo() {
     videoElement.src = videoSources[videoIndex];
     videoElement.play();
     videoIndex = (videoIndex + 1) % videoSources.length;
 }
 
+// Initiera videouppspelning
+videoElement.addEventListener("loadeddata", () => {
+    videoElement.play();
+});
 videoElement.addEventListener("ended", playNextVideo);
 playNextVideo();
 
