@@ -28,7 +28,7 @@ function updateTimer() {
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
 
-    document.getElementById("timer").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    document.getElementById("timer-display").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
 
 setInterval(updateTimer, 1000);
