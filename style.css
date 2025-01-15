@@ -27,7 +27,7 @@ section {
     border-radius: 10px;
     width: 90%;
     max-width: 600px;
-    text-align: center; /* Centrera texten */
+    text-align: center;
 }
 
 /* Text Sektion */
@@ -48,7 +48,7 @@ footer {
     background: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     text-align: center;
-    animation: changeBackgroundColor 1s infinite;
+    animation: rainbowBackground 3s infinite;
 }
 
 /* Social Links */
@@ -58,30 +58,19 @@ footer {
     margin: 5px;
 }
 
-/* Coin Image */
-.coin-wrapper img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    animation: spin 5s linear infinite;
-}
-
-/* Timer Bakgrund */
+/* Timer Animation */
 .timer {
     padding: 5px 10px;
     border-radius: 5px;
-    animation: changeBackgroundColor 1s infinite;
+    animation: rainbowBackground 3s infinite;
 }
 
-/* Färgändringsanimation */
-@keyframes changeBackgroundColor {
-    0% { background-color: rgba(50, 0, 0, 0.6); }
-    50% { background-color: rgba(0, 50, 0, 0.6); }
-    100% { background-color: rgba(0, 0, 50, 0.6); }
-}
-
-/* Spin Animation */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+/* Rainbow Animation */
+@keyframes rainbowBackground {
+    0% { background-color: red; }
+    20% { background-color: orange; }
+    50% { background-color: yellow; }
+    60% { background-color: green; }
+    85% { background-color: blue; }
+    100% { background-color: purple; }
 }
