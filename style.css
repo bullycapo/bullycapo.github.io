@@ -1,3 +1,26 @@
+/* Video Bakgrund */
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Skalar proportionellt och täcker hela skärmen */
+    z-index: -1;
+}
+
+/* För mycket små skärmar */
+@media screen and (max-width: 768px) {
+    #background-video {
+        height: 100%;
+        width: auto;
+    }
+}
+
+
 /* Roadmap */
 .roadmap {
     margin: 50px auto;
