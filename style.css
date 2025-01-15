@@ -5,7 +5,7 @@ body, html {
     font-family: Arial, sans-serif;
     color: white;
     height: 100%;
-    overflow: hidden;
+    overflow-y: scroll; /* Tillåter skrollning */
 }
 
 /* Video Bakgrund */
@@ -20,82 +20,55 @@ body, html {
 }
 
 /* Text Sektion */
-.text-section {
-    position: absolute;
-    top: 15%;
-    left: 10%;
-    width: 36%;
-    background: rgba(0, 0, 0, 0.4); /* Halvtransparent svart */
+.text-left {
+    margin: 100px auto;
     padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
-    line-height: 1.8;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Responsiv design */
+@media screen and (max-width: 768px) {
+    .text-left {
+        width: 95%;
+        font-size: 14px;
+    }
 }
 
 /* Footer Sektion */
 footer {
-    position: fixed;
-    bottom: 0;
-    right: 5%;
-    padding: 20px;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 20px;
-    animation: changeBackgroundColor 1s infinite;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 600px;
 }
 
-/* Bakgrundsändring för footer */
-@keyframes changeBackgroundColor {
-    0% { background-color: rgba(50, 0, 0, 0.4); }
-    25% { background-color: rgba(0, 50, 0, 0.4); }
-    50% { background-color: rgba(0, 0, 50, 0.4); }
-    75% { background-color: rgba(50, 50, 0, 0.4); }
-    100% { background-color: rgba(50, 0, 50, 0.4); }
-}
-
-/* Social Links */
-.social-links img {
+footer .social-links img {
     width: 30px;
     height: 30px;
-    margin-bottom: 10px;
-    transition: transform 0.2s;
+    margin: 0 5px;
 }
 
-.social-links img:hover {
-    transform: scale(1.2);
-}
-
-/* Coin Image */
-.coin-wrapper {
-    margin-bottom: 10px;
-}
-
-.coin-image {
-    width: 80px;
-    height: 80px;
+footer .coin-wrapper img {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    animation: spin 5s linear infinite;
     object-fit: cover;
+    animation: spin 5s linear infinite;
 }
 
-/* Coin Image Animation */
 @keyframes spin {
-    0% {
+    from {
         transform: rotate(0deg);
     }
-    100% {
+    to {
         transform: rotate(360deg);
     }
-}
-
-/* Timer */
-.timer {
-    display: inline-block;
-    padding: 5px 10px;
-    background: black;
-    border-radius: 5px;
-    animation: changeBackgroundColor 1s infinite;
-    color: white;
-    font-weight: bold;
 }
