@@ -1,9 +1,8 @@
-// Video Background Playlist
 const videoSources = [
     "monthlybtc.mp4",
     "dailybtc.mp4",
     "quarterbtc.mp4",
-    "weeklybtc.mp4"
+    "weeklybtc.mp4",
 ];
 
 let videoIndex = 0;
@@ -18,7 +17,7 @@ function playNextVideo() {
 videoElement.addEventListener("ended", playNextVideo);
 playNextVideo();
 
-// Timer Function
+// Timer-funktion
 function updateTimer() {
     const launchDate = new Date("2022-11-21T00:00:00");
     const now = new Date();
@@ -29,14 +28,7 @@ function updateTimer() {
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
 
-    document.getElementById("timer").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    document.getElementById("timer-display").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
 
 setInterval(updateTimer, 1000);
-
-// Copy Address Function
-function copyAddress() {
-    const address = document.getElementById("contract-address").textContent;
-    navigator.clipboard.writeText(address);
-    alert("Contract address copied!");
-}
