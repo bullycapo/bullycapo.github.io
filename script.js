@@ -1,4 +1,4 @@
-// Lista över videokällor i önskad ordning
+// Video Background Playlist
 const videoSources = [
     "monthlybtc.mp4",
     "dailybtc.mp4",
@@ -6,24 +6,19 @@ const videoSources = [
     "weeklybtc.mp4"
 ];
 
-let videoIndex = 0; // Starta med den första videon
+let videoIndex = 0;
 const videoElement = document.getElementById("background-video");
 
-// Funktion för att spela nästa video
 function playNextVideo() {
     videoElement.src = videoSources[videoIndex];
     videoElement.play();
-    videoIndex = (videoIndex + 1) % videoSources.length; // Loopa tillbaka till början efter sista videon
+    videoIndex = (videoIndex + 1) % videoSources.length;
 }
 
-// Lyssna på när videon slutar och spela nästa
 videoElement.addEventListener("ended", playNextVideo);
-
-// Starta uppspelningen med den första videon
 playNextVideo();
 
-
-// Timer
+// Timer Function
 function updateTimer() {
     const launchDate = new Date("2022-11-21T00:00:00");
     const now = new Date();
@@ -38,3 +33,10 @@ function updateTimer() {
 }
 
 setInterval(updateTimer, 1000);
+
+// Copy Address Function
+function copyAddress() {
+    const address = document.getElementById("contract-address").textContent;
+    navigator.clipboard.writeText(address);
+    alert("Contract address copied!");
+}
