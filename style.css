@@ -1,87 +1,45 @@
-/* Grundinställningar */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    color: white;
-    height: 100%;
-    overflow-y: scroll; /* Tillåter skrollning */
-}
-
-/* Video Bakgrund */
-#background-video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%, -50%);
-    object-fit: cover; /* Skalar proportionellt och täcker hela skärmen */
-    z-index: -1;
-}
-
-/* För mycket små skärmar */
-@media screen and (max-width: 768px) {
-    #background-video {
-        height: 100%;
-        width: auto;
-    }
-}
-
-
-
-/* Text Sektion */
-.text-left {
-    margin: 100px auto;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    width: 90%;
-    max-width: 600px;
-}
-
-/* Responsiv design */
-@media screen and (max-width: 768px) {
-    .text-left {
-        width: 95%;
-        font-size: 14px;
-    }
-}
-
-/* Footer Sektion */
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
+/* Roadmap */
+.roadmap {
     margin: 50px auto;
-    width: 90%;
-    max-width: 600px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    color: white;
+    width: 80%;
+    line-height: 1.8;
 }
 
-footer .social-links img {
-    width: 30px;
-    height: 30px;
-    margin: 0 5px;
+.roadmap h2 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-footer .coin-wrapper img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    animation: spin 5s linear infinite;
+.roadmap ul {
+    list-style: none;
+    padding: 0;
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.roadmap li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+/* Timer with color-changing background */
+#timer {
+    display: inline-block;
+    padding: 5px 10px;
+    background: black;
+    border-radius: 5px;
+    animation: colorChange 1s infinite;
+    color: white;
+    font-weight: bold;
+}
+
+/* Animation for timer background */
+@keyframes colorChange {
+    0% { background-color: rgba(255, 0, 0, 0.7); }
+    25% { background-color: rgba(0, 255, 0, 0.7); }
+    50% { background-color: rgba(0, 0, 255, 0.7); }
+    75% { background-color: rgba(255, 255, 0, 0.7); }
+    100% { background-color: rgba(255, 0, 255, 0.7); }
 }
