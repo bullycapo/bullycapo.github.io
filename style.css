@@ -25,18 +25,31 @@ body, html {
     object-fit: cover;
 }
 
-/* Titel Glitch Effekt */
-.glitch {
-    font-size: 2.5rem;
+/* Header Sektion */
+.header-section {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(255,0,150,0.7), rgba(0,204,255,0.7));
     color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glitch Effekt */
+.header-section .glitch {
     position: relative;
     display: inline-block;
     text-transform: uppercase;
     animation: glitch 1.5s infinite;
 }
 
-.glitch::before,
-.glitch::after {
+.header-section .glitch::before,
+.header-section .glitch::after {
     content: attr(data-text);
     position: absolute;
     top: 0;
@@ -48,14 +61,14 @@ body, html {
     animation: glitch 1.5s infinite;
 }
 
-.glitch::before {
-    color: red;
+.header-section .glitch::before {
+    color: rgba(255, 0, 150, 0.8);
     clip: rect(0, 200px, 50px, 0);
     animation: glitch 2s infinite linear alternate-reverse;
 }
 
-.glitch::after {
-    color: blue;
+.header-section .glitch::after {
+    color: rgba(0, 204, 255, 0.8);
     clip: rect(50px, 200px, 100px, 0);
     animation: glitch 1.5s infinite linear alternate;
 }
@@ -81,6 +94,8 @@ body, html {
         transform: translate(0);
     }
 }
+
+
 /* Sektioner Gemensamt */
 section {
     margin: 50px auto;
@@ -96,18 +111,6 @@ section {
     background: rgba(0, 0, 0, 0.6);
 }
 
-/* Header Sektion */
-.header-section {
-    width: 100%;
-    padding: 20px 0;
-    text-align: center;
-    background: linear-gradient(90deg, rgba(255,0,150,0.7), rgba(0,204,255,0.7));
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
 
 
 /* Roadmap Sektion */
