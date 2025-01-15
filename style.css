@@ -6,7 +6,7 @@ body, html {
     color: white;
     background: black;
     height: 100%;
-    overflow-y: scroll; /* Tillåter skrollning */
+    overflow-y: scroll;
 }
 
 /* Video Bakgrund */
@@ -20,24 +20,24 @@ body, html {
     z-index: -1;
 }
 
-/* Text Sektion */
-.text-section {
+/* Sektioner Gemensamt */
+section {
     margin: 50px auto;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     width: 90%;
     max-width: 600px;
+    text-align: center; /* Centrera texten */
+}
+
+/* Text Sektion */
+.text-section {
+    background: rgba(0, 0, 0, 0.6);
 }
 
 /* Roadmap Sektion */
 .roadmap-section {
-    margin: 50px auto;
-    padding: 20px;
     background: rgba(0, 0, 50, 0.6);
-    border-radius: 10px;
-    width: 90%;
-    max-width: 600px;
     color: #ffcc00;
 }
 
@@ -47,8 +47,7 @@ footer {
     padding: 20px;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
-    width: 90%;
-    max-width: 600px;
+    text-align: center;
     animation: changeBackgroundColor 1s infinite;
 }
 
